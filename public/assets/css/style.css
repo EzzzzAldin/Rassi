@@ -1,0 +1,33 @@
+/* Variables */
+:root {
+    --main-color: #182045;
+    --secondary-color: #c79b07;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --main-font: "Cairo", sans-serif;
+    --secondary-font: "Sora", sans-serif;
+    --main-height: 100vh;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
