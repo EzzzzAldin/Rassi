@@ -3,7 +3,7 @@
 
 
         <a class="navbar-brand fw-bold" href="#">
-            <img src="{{ asset('assets\imgs\logo.png') }}" alt="Logo" height="64">
+            <img src="{{ asset('assets\imgs\logo.png') }}" alt="Logo" height="80">
         </a>
 
 

@@ -457,3 +457,332 @@ body {
 }
 
 /* End AuctionsSlider Section */
+
+/* Start Top Auctions Section */
+.top-auction .custom-card {
+    padding: 40px !important;
+    border-radius: 15px !important;
+    background-color: rgba(24, 32, 69, 0.05);
+}
+
+.top-auction .custom-card h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.top-auction .custom-card h6 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.top-auction .custom-card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.top-auction .custom-card .btn-gradient {
+    padding: 10px 24px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.crown-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.topauction-img {
+    width: 192px;
+    height: 239px;
+    object-fit: cover;
+    border: 1px solid var(--main-color);
+    border-radius: 30px;
+}
+
+.side-ad-img {
+    height: 444px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .topauction-img {
+        width: 120px;
+        height: 150px;
+        margin-bottom: 1rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block;
+    }
+
+    .custom-card .d-flex.align-items-center.mb-3:nth-of-type(2) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .custom-card .d-flex.align-items-center.mb-3:nth-of-type(2) > div {
+        margin-top: 10px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .custom-card .btn-gradient {
+        width: 100% !important;
+    }
+
+    .side-ad-img {
+        height: auto;
+        max-height: 300px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .crown-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .top-auction .custom-card h5 {
+        font-size: 1.2rem;
+    }
+}
+
+/* End Top Auctions Section */
+
+/* Start How Participate Section */
+.first-step,
+.second-step,
+.third-step {
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.first-step,
+.third-step {
+    background-color: rgba(199, 155, 7, 0.2);
+}
+
+.second-step {
+    background-color: rgba(175, 43, 39, 0.2);
+}
+
+.step-number,
+.step-number-red {
+    padding: 6px 16px;
+    background-color: rgba(199, 155, 7, 0.25);
+    border-radius: 100px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.step-number-red {
+    background-color: #af2b27;
+    color: #fff;
+}
+
+.first-step h5,
+.third-step h5,
+.second-step h5 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.first-step p,
+.third-step p,
+.second-step p {
+    font-size: 1.3rem;
+    color: var(--main-color);
+    font-weight: 400;
+}
+
+.title-participate h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+/* End How Participate Section */
+
+/* Start Statics Section */
+.statics {
+    background-color: rgba(243, 244, 246, 1);
+}
+
+.stat-number {
+    font-family: "Changa", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.statics p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: rgba(24, 32, 69, 0.5);
+}
+
+/* End Statics Section */
+
+/* Start Footer Section */
+footer {
+    background-color: var(--main-color);
+    padding: 48px 120px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.footer-list .list-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #a0a0a0;
+    margin-bottom: 12px;
+    position: relative;
+    padding-right: 15px;
+}
+
+.footer-list .list-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 32px 16px;
+    }
+
+    footer .row:first-child {
+        text-align: center;
+    }
+
+    footer .row:first-child .col-md-6 {
+        display: none;
+    }
+
+    footer .row:first-child .col-md-3 {
+        margin-bottom: 1rem;
+    }
+
+    footer .d-flex.justify-content-center.justify-content-md-end {
+        justify-content: center !important;
+    }
+
+    .footer-list {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-list:last-child {
+        margin-bottom: 0;
+    }
+
+    .footer-list .list-title {
+        padding-right: 0;
+    }
+
+    .footer-list .list-title::after {
+        display: none;
+    }
+}
+
+/* End Footer Section */
+
+/* Route About Us */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.about-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(24, 32, 69, 0.55);
+    z-index: 2;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 10%;
+}
+
+.about-hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.about-hero-title span {
+    color: var(--secondary-color);
+}
+
+.about-hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 800px;
+}
+
+.our-story {
+    padding: 48px 56px;
+    border-radius: 15px;
+    background-color: rgba(24, 32, 69, 0.05);
+}
+
+.our-story h3,
+.our-values h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.our-story p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--main-color);
+}

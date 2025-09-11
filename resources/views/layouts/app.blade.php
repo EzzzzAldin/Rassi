@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cambay:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
@@ -74,6 +77,30 @@
             }
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const counters = document.querySelectorAll(".stat-number");
+
+            counters.forEach(counter => {
+                counter.innerText = "0";
+                const updateCounter = () => {
+                    const target = +counter.getAttribute("data-target");
+                    const current = +counter.innerText.replace(/,/g, "");
+                    const increment = Math.ceil(target / 200); // السرعة
+
+                    if (current < target) {
+                        counter.innerText = (current + increment).toLocaleString();
+                        setTimeout(updateCounter, 20);
+                    } else {
+                        counter.innerText = target.toLocaleString() + "+"; // تضيف +
+                    }
+                };
+                updateCounter();
+            });
+        });
+    </script>
+
     @stack('scripts')
 </body>
 
