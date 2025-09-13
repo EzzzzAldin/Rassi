@@ -786,3 +786,97 @@ footer {
     font-weight: 400;
     color: var(--main-color);
 }
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.feature-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(24, 32, 69, 0.5);
+}
+
+/* End About Us Route */
+
+/* End Contact Us Route */
+.contact-info-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.form-contact {
+    background-color: rgba(24, 32, 69, 0.05);
+    padding: 32px;
+    border-radius: 5px;
+}
+
+.form-contact input {
+    padding: 12px 16px;
+    border-radius: 5px;
+    text-align: right;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.02);
+    box-shadow: unset !important;
+    border-color: transparent !important;
+}
+
+.form-contact textarea {
+    box-shadow: unset !important;
+    border-color: transparent !important;
+}
+
+.form-contact .btn-gradient {
+    padding: 10px 24px;
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    color: var(--main-color) !important;
+}
+/* End Contact Us Route */
+
+/* Start Terms Route */
+.terms h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.terms-info {
+    padding: 24px 40px;
+    border: 1px solid rgba(24, 32, 69, 0.25);
+    border-radius: 5px;
+}
+
+.terms-info h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.terms-info p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.terms-list {
+    list-style-type: square;
+    padding-right: 1.2rem;
+    color: var(--main-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.terms-list li {
+    margin-bottom: 0.5rem;
+}
+/* End Terms Route */

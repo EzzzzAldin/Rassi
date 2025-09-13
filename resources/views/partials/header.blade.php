@@ -2,7 +2,7 @@
     <div class="container">
 
 
-        <a class="navbar-brand fw-bold" href="#">
+        <a class="navbar-brand fw-bold" href="{{ url('/') }}">
             <img src="{{ asset('assets\imgs\logo.png') }}" alt="Logo" height="80">
         </a>
 
@@ -15,11 +15,32 @@
 
         <div class="collapse navbar-collapse justify-content-center">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">من نحن</a></li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
+                        الرئيسية
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}"
+                        href="{{ route('pages', ['page' => 'aboutus']) }}">
+                        من نحن
+                    </a>
+                </li>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="#">المزادات</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">الشروط والأحكام</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">تواصل معنا</a></li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
+                        href="{{ route('pages', ['page' => 'terms']) }}">
+                        الشروط والأحكام
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}"
+                        href="{{ route('pages', ['page' => 'contact-us']) }}">
+                        تواصل معنا
+                    </a>
+                </li>
             </ul>
 
             <div class="d-flex gap-2">
@@ -31,8 +52,8 @@
 </nav>
 
 {{-- Mobile View --}}
-<div class="offcanvas offcanvas-{{ app()->getLocale() === 'ar' ? 'end' : 'start' }}" tabindex="-1" id="offcanvasNavbar"
-    aria-labelledby="offcanvasNavbarLabel">
+<div class="offcanvas offcanvas-{{ app()->getLocale() === 'ar' ? 'end' : 'start' }}" tabindex="-1"
+    id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">القائمة</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

@@ -6,7 +6,7 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/{page?}', function ($page = 'index') {
-    $availablePages = ['index', 'aboutus', 'projects'];
+    $availablePages = ['index', 'aboutus', 'contact-us', 'terms'];
 
     if (! in_array($page, $availablePages)) {
         abort(404);

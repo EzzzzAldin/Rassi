@@ -27,67 +27,58 @@
                     أونلاين.)</p>
             </div>
 
-            <div class="our-values mt-5 py-5">
+            <div class="our-values mt-5 py-5 mb-5">
                 <h3>قيمنا</h3>
 
                 <div class="row mt-5">
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mb-5">
                         <div class="d-flex align-items-start feature-box">
-                            <!-- العمود الأول: الأيقونة -->
                             <div class="icon-wrapper me-3">
-                                <img src="{{ asset('assets/imgs/shield.svg') }}" alt="الأمان" width="48"
-                                    height="48">
+                                <img src="{{ asset('assets/imgs/shield.svg') }}" alt="الأمان" width="83"
+                                    height="87">
                             </div>
-
-                            <!-- العمود الثاني: النص -->
                             <div>
                                 <h5 class="feature-title">الأمان</h5>
                                 <p class="feature-text">نحافظ على خصوصية بياناتك ومعاملاتك.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mb-5">
                         <div class="d-flex align-items-start feature-box">
-                            <!-- العمود الأول: الأيقونة -->
                             <div class="icon-wrapper me-3">
-                                <img src="{{ asset('assets/imgs/shield.svg') }}" alt="الأمان" width="48"
-                                    height="48">
+                                <img src="{{ asset('assets/imgs/visiblity.svg') }}" alt="الشفافية" width="83"
+                                    height="87">
                             </div>
 
-                            <!-- العمود الثاني: النص -->
                             <div>
-                                <h5 class="feature-title">الأمان</h5>
-                                <p class="feature-text">نحافظ على خصوصية بياناتك ومعاملاتك.</p>
+                                <h5 class="feature-title">الشفافية</h5>
+                                <p class="feature-text">كل مزاد يتم بوضوح كامل.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="d-flex align-items-start feature-box">
-                            <!-- العمود الأول: الأيقونة -->
                             <div class="icon-wrapper me-3">
-                                <img src="{{ asset('assets/imgs/shield.svg') }}" alt="الأمان" width="48"
-                                    height="48">
+                                <img src="{{ asset('assets/imgs/junies.svg') }}" alt="الابتكار" width="83"
+                                    height="87">
                             </div>
 
-                            <!-- العمود الثاني: النص -->
                             <div>
-                                <h5 class="feature-title">الأمان</h5>
-                                <p class="feature-text">نحافظ على خصوصية بياناتك ومعاملاتك.</p>
+                                <h5 class="feature-title">الابتكار</h5>
+                                <p class="feature-text">نسهل العملية بتكنولوجيا حديثة.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="d-flex align-items-start feature-box">
-                            <!-- العمود الأول: الأيقونة -->
                             <div class="icon-wrapper me-3">
-                                <img src="{{ asset('assets/imgs/shield.svg') }}" alt="الأمان" width="48"
-                                    height="48">
+                                <img src="{{ asset('assets/imgs/turest.svg') }}" alt="المصداقية" width="83"
+                                    height="87">
                             </div>
 
-                            <!-- العمود الثاني: النص -->
                             <div>
-                                <h5 class="feature-title">الأمان</h5>
-                                <p class="feature-text">نحافظ على خصوصية بياناتك ومعاملاتك.</p>
+                                <h5 class="feature-title">المصداقية</h5>
+                                <p class="feature-text">نوفر بيئة بيع وشراء موثوقة.</p>
                             </div>
                         </div>
                     </div>
