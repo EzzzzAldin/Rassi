@@ -12,7 +12,8 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-#[Layout('components.layouts.auth')]
+#[Layout('layouts.app')]
+
 class Login extends Component
 {
     #[Validate('required|string|email')]
@@ -20,6 +21,9 @@ class Login extends Component
 
     #[Validate('required|string')]
     public string $password = '';
+
+    #[Validate('required|string')]
+    public string $phone = '';
 
     public bool $remember = false;
 
@@ -72,6 +76,6 @@ class Login extends Component
      */
     protected function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->email).'|'.request()->ip());
+        return Str::transliterate(Str::lower($this->email) . '|' . request()->ip());
     }
 }

@@ -1,25 +1,47 @@
- <div class="flex flex-col gap-6">
-    <x-auth-header :title="__('Forgot password')" :description="__('Enter your email to receive a password reset link')" />
+<div class="d-flex align-items-center justify-content-center py-5">
 
-    <!-- Session Status -->
-    <x-auth-session-status class="text-center" :status="session('status')" />
+    <div class="form-login shadow-sm w-100">
 
-    <form method="POST" wire:submit="sendPasswordResetLink" class="flex flex-col gap-6">
-        <!-- Email Address -->
-        <flux:input
-            wire:model="email"
-            :label="__('Email Address')"
-            type="email"
-            required
-            autofocus
-            placeholder="email@example.com"
-        />
+        <!-- Logo -->
+        <div class="text-center">
+            <img src="{{ asset('assets/imgs/login.png') }}" alt="Logo" height="64" width="130">
+        </div>
 
-        <flux:button variant="primary" type="submit" class="w-full">{{ __('Email password reset link') }}</flux:button>
-    </form>
+        <!-- Title -->
+        <h4 class="text-center">إستعادة كلمة السر</h4>
+        <p class="text-center mb-4">أدخل بريدك الإلكتروني المسجل وسنرسل لك رابط لإعادة تعيين كلمة المرور.</p>
 
-    <div class="space-x-1 rtl:space-x-reverse text-center text-sm text-zinc-400">
-        <span>{{ __('Or, return to') }}</span>
-        <flux:link :href="route('login')" wire:navigate>{{ __('log in') }}</flux:link>
+        <!-- Session Status -->
+        @if (session('status'))
+            <div class="alert alert-success text-center small">
+                {{ session('status') }}
+            </div>
+        @endif
+
+        <!-- Form -->
+        <form method="POST" wire:submit.prevent="sendPasswordResetLink">
+            @csrf
+
+            <!-- Email Address -->
+            <div class="mb-3">
+                <input type="email" wire:model="email" class="form-control text-start" placeholder="البريد الإلكتروني"
+                    required autofocus>
+                @error('email')
+                    <span class="text-danger small">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn w-100 btn-gradient">
+                استمرار
+            </button>
+        </form>
+
+        <!-- Back to login -->
+        <div class="text-center mt-3">
+            <span class="text-muted">تذكرت كلمة المرور؟</span>
+            <a href="{{ route('login') }}" class="text-warning text-decoration-none">تسجيل الدخول</a>
+        </div>
     </div>
+
 </div>

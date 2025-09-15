@@ -44,8 +44,8 @@
             </ul>
 
             <div class="d-flex gap-2">
-                <a href="#" class="btn btn-login btn-gradient">تسجيل دخول</a>
-                <a href="#" class="btn btn-register">تسجيل حساب</a>
+                <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
+                <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
             </div>
         </div>
     </div>
@@ -67,8 +67,8 @@
             <li class="nav-item"><a class="nav-link" href="#">تواصل معنا</a></li>
         </ul>
         <div class="mt-3 d-flex flex-column gap-2">
-            <a href="#" class="btn btn-login btn-gradient">تسجيل دخول</a>
-            <a href="#" class="btn btn-register">تسجيل حساب</a>
+            <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
+            <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
         </div>
     </div>
 </div>
