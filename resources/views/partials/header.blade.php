@@ -28,7 +28,8 @@
                     </a>
                 </li>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">المزادات</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
+                        href="{{ route('categories') }}">المزادات</a></li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
                         href="{{ route('pages', ['page' => 'terms']) }}">
@@ -60,11 +61,17 @@
     </div>
     <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item"><a class="nav-link active" href="#">الرئيسية</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">من نحن</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">المزادات</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">الشروط والأحكام</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">تواصل معنا</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                    href="{{ url('/') }}">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}"
+                    href="{{ route('pages', ['page' => 'aboutus']) }}">من نحن</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
+                    href="{{ route('categories') }}">المزادات</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
+                    href="{{ route('pages', ['page' => 'terms']) }}">الشروط
+                    والأحكام</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}"
+                    href="{{ route('pages', ['page' => 'contact-us']) }}">تواصل معنا</a></li>
         </ul>
         <div class="mt-3 d-flex flex-column gap-2">
             <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>

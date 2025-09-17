@@ -27,6 +27,10 @@
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/custome.css') }}" /> --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+
+
 
 
     @stack('styles')
@@ -53,6 +57,10 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+
 
 
 
@@ -95,17 +103,59 @@
                 const updateCounter = () => {
                     const target = +counter.getAttribute("data-target");
                     const current = +counter.innerText.replace(/,/g, "");
-                    const increment = Math.ceil(target / 200); // السرعة
+                    const increment = Math.ceil(target / 200);
 
                     if (current < target) {
                         counter.innerText = (current + increment).toLocaleString();
                         setTimeout(updateCounter, 20);
                     } else {
-                        counter.innerText = target.toLocaleString() + "+"; // تضيف +
+                        counter.innerText = target.toLocaleString() + "+";
                     }
                 };
                 updateCounter();
             });
+        });
+    </script>
+
+    <script>
+        let priceSlider = document.getElementById('priceSlider');
+
+        noUiSlider.create(priceSlider, {
+            start: [0, 500],
+            connect: true,
+            direction: 'rtl',
+            range: {
+                'min': 10,
+                'max': 500
+            },
+            step: 10,
+            tooltips: [true, true],
+            format: {
+                to: function(value) {
+                    return Math.round(value);
+                },
+                from: function(value) {
+                    return Number(value);
+                }
+            }
+        });
+
+        const inputMin = document.getElementById('input-min');
+        const inputMax = document.getElementById('input-max');
+
+        priceSlider.noUiSlider.on('update', function(values, handle) {
+            if (handle === 0) {
+                inputMin.value = values[0];
+            } else {
+                inputMax.value = values[1];
+            }
+        });
+
+        inputMin.addEventListener('change', function() {
+            priceSlider.noUiSlider.set([this.value, null]);
+        });
+        inputMax.addEventListener('change', function() {
+            priceSlider.noUiSlider.set([null, this.value]);
         });
     </script>
 

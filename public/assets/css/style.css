@@ -364,6 +364,11 @@ body {
     border: 1px solid #eee;
     border-radius: 12px;
     transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.auction-card:hover {
+    transform: translateY(-8px) scale(1.02);
 }
 
 .auction-card h6 {
@@ -1061,3 +1066,207 @@ footer {
 }
 
 /* End Login Signup Style */
+
+/* Start Style Categories Route */
+
+/* Start Categories Page */
+.main-category h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.main-category .card-category {
+    border-radius: 15px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.main-category .card-category:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.main-category .card-category .card-img-top {
+    height: 238px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: filter 0.3s ease;
+}
+
+.main-category .card-category:hover .card-img-top {
+    filter: brightness(0.9);
+}
+
+.main-category .card-category .card-body {
+    padding: 16px;
+}
+
+.main-category .card-category .card-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.main-category .card-category .auction-count {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--main-color);
+}
+/* End Categories Page */
+
+/* Start Auctions Page */
+.filter-box {
+    padding: 24px;
+    background-color: rgba(24, 32, 69, 0.08);
+    border-radius: 5px;
+}
+
+.filter-box .search input,
+.filter-box .choose-category {
+    padding: 10px 24px;
+    border-radius: 15px;
+    background-color: #fff;
+    border: none;
+    box-shadow: unset !important;
+}
+
+.filter-box input:focus,
+.accordion-button:focus {
+    border: none !important;
+    outline: none !important;
+    box-shadow: unset !important;
+}
+
+.filter-box .search-btn {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.accordion-button::after {
+    display: none !important;
+}
+
+.accordion-item,
+.filter-box .choose-category {
+    border-radius: 15px !important;
+}
+
+.form-check-input[type="radio"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+
+    background-image: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.form-check-input[type="radio"]:checked {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.form-check-input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-check label {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.title-search {
+    font-size: 1.1rem;
+    font-weight: 400 !important;
+    color: var(--main-color);
+}
+
+#priceSlider {
+    height: 10px;
+    margin: 30px 0;
+}
+
+#priceSlider .noUi-connect {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+#priceSlider .noUi-handle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 6px solid var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+#priceSlider .noUi-handle:active {
+    cursor: grabbing;
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+    display: none !important;
+}
+
+.noUi-tooltip {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+/* .filter-box #collapseCategory {
+    max-height: 305px;
+    overflow-y: auto;
+    overflow-x: hidden;
+} */
+
+.simplebar-track.simplebar-vertical {
+    right: auto !important;
+    left: 0 !important;
+    background: rgba(24, 32, 69, 0.15);
+    width: 8px;
+}
+
+.simplebar-scrollbar::before {
+    background-color: var(--secondary-color) !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+}
+
+.form-check-input[type="checkbox"] {
+    border-radius: 2 !important;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* End Auctions Page */
+
+/* End Style Categories Route */

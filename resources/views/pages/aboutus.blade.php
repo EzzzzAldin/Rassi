@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mb-5">
                         <div class="d-flex align-items-start feature-box">
                             <div class="icon-wrapper me-3">
                                 <img src="{{ asset('assets/imgs/junies.svg') }}" alt="الابتكار" width="83"
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 mb-5">
                         <div class="d-flex align-items-start feature-box">
                             <div class="icon-wrapper me-3">
                                 <img src="{{ asset('assets/imgs/turest.svg') }}" alt="المصداقية" width="83"
