@@ -1,0 +1,16 @@
+.auctionPage .alertSection {
+    background-color: #f1e6c1;
+    color: black;
+    border-radius: 7px;
+}
+
+.auctionPage .TimerSection {
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+}
+
+.auctionPage .pricing,
+.auctionPage .numAuct,
+.auctionPage .endDate {
+    color: black;
+}
