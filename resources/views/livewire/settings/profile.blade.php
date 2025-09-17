@@ -1,43 +1,50 @@
-<section class="w-full">
-    @include('partials.settings-heading')
+<div class="profile-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="profile-info">
+                    <div class="text-center">
+                        <img src="{{ asset('assets/imgs/681016.jpg') }}" alt="Profile Picture"
+                            class="rounded-circle mb-3 object-fit-cover" width="150" height="150">
 
-    <x-settings.layout :heading="__('Profile')" :subheading="__('Update your name and email address')">
-        <form wire:submit="updateProfileInformation" class="my-6 w-full space-y-6">
-            <flux:input wire:model="name" :label="__('Name')" type="text" required autofocus autocomplete="name" />
+                        @php
+                            $rating = 2.7;
+                            $rounded = round($rating * 2) / 2;
+                        @endphp
 
-            <div>
-                <flux:input wire:model="email" :label="__('Email')" type="email" required autocomplete="email" />
+                        <div class="d-flex align-items-center justify-content-center mb-2 mt-3">
+                            <div class="stars text-warning me-2 d-flex flex-row-reverse">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    @if ($rounded >= $i)
+                                        <i class="fa-solid fa-star"></i>
+                                    @elseif ($rounded + 0.5 == $i)
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                    @else
+                                        <i class="fa-regular fa-star"></i>
+                                    @endif
+                                @endfor
+                            </div>
+                            <span class="rate">{{ number_format($rating, 1) }}</span>
+                        </div>
 
-                @if (auth()->user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail &&! auth()->user()->hasVerifiedEmail())
-                    <div>
-                        <flux:text class="mt-4">
-                            {{ __('Your email address is unverified.') }}
+                        <h4 class="mb-2 mt-3">محمد خالد</h4>
 
-                            <flux:link class="text-sm cursor-pointer" wire:click.prevent="resendVerificationNotification">
-                                {{ __('Click here to re-send the verification email.') }}
-                            </flux:link>
-                        </flux:text>
-
-                        @if (session('status') === 'verification-link-sent')
-                            <flux:text class="mt-2 font-medium !dark:text-green-400 !text-green-600">
-                                {{ __('A new verification link has been sent to your email address.') }}
-                            </flux:text>
-                        @endif
+                        <div class="location d-flex justify-content-center align-items-center mt-3 mb-3">
+                            <img src="{{ asset('assets/imgs/Location.svg') }}" alt="Location" width="24"
+                                class="me-2">
+                            <span>القاهرة، مصر</span>
+                        </div>
+                        <div class="btn-submit text-center">
+                            <button type="submit" class="btn w-50 btn-gradient">
+                                إرسال رسالة
+                            </button>
+                        </div>
                     </div>
-                @endif
-            </div>
-
-            <div class="flex items-center gap-4">
-                <div class="flex items-center justify-end">
-                    <flux:button variant="primary" type="submit" class="w-full">{{ __('Save') }}</flux:button>
                 </div>
-
-                <x-action-message class="me-3" on="profile-updated">
-                    {{ __('Saved.') }}
-                </x-action-message>
             </div>
-        </form>
-
-        <livewire:settings.delete-user-form />
-    </x-settings.layout>
-</section>
+            <div class="col-12 col-md-8">
+                @livewire('auctions-filter')
+            </div>
+        </div>
+    </div>
+</div>

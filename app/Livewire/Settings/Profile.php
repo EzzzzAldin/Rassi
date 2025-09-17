@@ -2,10 +2,6 @@
 
 namespace App\Livewire\Settings;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
 
 class Profile extends Component
@@ -19,56 +15,34 @@ class Profile extends Component
      */
     public function mount(): void
     {
-        $this->name = Auth::user()->name;
-        $this->email = Auth::user()->email;
+        // قيم تجريبية مؤقتًا لعرض الفرونت
+        $this->name = 'Test User';
+        $this->email = 'test@example.com';
     }
 
     /**
-     * Update the profile information for the currently authenticated user.
+     * Update the profile information (معلّقة لحد ما يجهز الباك اند)
      */
     public function updateProfileInformation(): void
     {
-        $user = Auth::user();
-
-        $validated = $this->validate([
-            'name' => ['required', 'string', 'max:255'],
-
-            'email' => [
-                'required',
-                'string',
-                'lowercase',
-                'email',
-                'max:255',
-                Rule::unique(User::class)->ignore($user->id),
-            ],
-        ]);
-
-        $user->fill($validated);
-
-        if ($user->isDirty('email')) {
-            $user->email_verified_at = null;
-        }
-
-        $user->save();
-
-        $this->dispatch('profile-updated', name: $user->name);
+        // تعليق الأكشن لحد ما يتجهز الباك اند
+        // dd('updateProfileInformation called');
     }
 
     /**
-     * Send an email verification notification to the current user.
+     * Resend verification (معلّقة مؤقتًا)
      */
     public function resendVerificationNotification(): void
     {
-        $user = Auth::user();
+        // تعليق الأكشن مؤقتًا
+        // dd('resendVerificationNotification called');
+    }
 
-        if ($user->hasVerifiedEmail()) {
-            $this->redirectIntended(default: route('dashboard', absolute: false));
-
-            return;
-        }
-
-        $user->sendEmailVerificationNotification();
-
-        Session::flash('status', 'verification-link-sent');
+    public function render()
+    {
+        return view('livewire.settings.profile')
+            ->layout('layouts.app', [
+                'title' => __('Profile Settings')
+            ]);
     }
 }

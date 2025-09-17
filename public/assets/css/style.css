@@ -1270,3 +1270,41 @@ footer {
 /* End Auctions Page */
 
 /* End Style Categories Route */
+
+/* Start Style Profile (phase 5) Route */
+.profile-info {
+    height: 100vh;
+    background-color: rgba(24, 32, 69, 0.05);
+    padding: 64px 40px;
+}
+
+.stars i {
+    font-size: 1.5rem !important;
+}
+
+.stars .fa-solid.fa-star,
+.stars .fa-solid.fa-star-half-stroke,
+.stars .fa-regular.fa-star {
+    color: rgba(254, 165, 0, 1);
+}
+
+.rate {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(254, 165, 0, 1);
+}
+
+.profile-info h4,
+.location span {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+.profile-info .btn-submit .btn-gradient {
+    padding: 8px 24px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff !important;
+}
+/* End Style Profile (phase 5) Route */
