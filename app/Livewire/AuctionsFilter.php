@@ -6,7 +6,16 @@ use Livewire\Component;
 
 class AuctionsFilter extends Component
 {
-    public string $filter = 'all'; // الفلتر الافتراضي
+    public string $filter = 'all';
+    // Add Fake value If user open your Profile  profileUserId = 1; else profileUserId = any number
+    // Can Change profileUserId From Profile.blade
+    public int $profileUserId;
+    public int $myId = 1;
+
+    public function mount($profileUserId)
+    {
+        $this->profileUserId = $profileUserId;
+    }
 
     public function setFilter(string $filter)
     {
@@ -15,7 +24,6 @@ class AuctionsFilter extends Component
 
     public function render()
     {
-        // مؤقتًا نجهز بيانات ستاتيك لعرض الفكرة
         $auctions = collect([
             ['id' => 1, 'title' => 'مزاد سيارة', 'status' => 'current'],
             ['id' => 2, 'title' => 'مزاد هاتف', 'status' => 'closed'],
@@ -23,13 +31,13 @@ class AuctionsFilter extends Component
             ['id' => 4, 'title' => 'مزاد خاص بي', 'status' => 'mine'],
         ]);
 
-        // فلترة
         $filtered = $this->filter === 'all'
             ? $auctions
             : $auctions->where('status', $this->filter);
 
         return view('livewire.auctions-filter', [
             'auctions' => $filtered,
+            'isOwner' => $this->profileUserId === $this->myId,
         ]);
     }
 }
