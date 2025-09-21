@@ -215,21 +215,21 @@
                         </div>
 
                     </div>
-                    <div class="lowerCaseForAuction">
+                    <div class="d-flex justify-content-between lowerCaseForAuction pb-2 pt-2">
                         <div class="title">الحد الأدني للزياده</div>
                         <div class="price">10 ر.س</div>
                     </div>
-                    <div class="shippingInfo">توضيح طريقة ووسيلة الشحن </div>
+                    <div class="border d-flex mt-3 p-2 shippingInfo">توضيح طريقة ووسيلة الشحن </div>
 
                 </div>
-                <div class="col-md-12">
-                    <div class="mineNave">
-                        <div class="">الوصف</div>
-                        <div class="">الشروط والاحكام</div>
-                        <div class="">التعليقات</div>
+                {{-- <div class="col-md-12">
+                    <div class="border d-flex gap-4 mineNave mt-3 p-2">
+                        <h4 class="m-0 active">الوصف</h4>
+                        <h4 class="m-0">الشروط والاحكام</h4>
+                        <h4 class="m-0">التعليقات</h4>
                     </div>
                     <div class="valSection">
-                        <div class="dis">
+                        <div class="border border-top-0 dis p-3">
                             ابل ايفون 16 برو‏ (128‎ GB) تيتانيوم أسود , جديد غير مستخدم أصلي بالضمان من السعودية .
 
                             تصميم من التيتانيوم ولا أروع — يتميز iPhone 16 Pro بتصميم كله قوة وخفة مع شاشة ريتنا سوبر XDR
@@ -250,7 +250,7 @@
                             استوديو احترافي. الأنماط الفوتوغرافية — يمنحك أحدث جيل من الأنماط الفوتوغرافية حرية إبداعية غير
                             مسبوقة كي تضع المزيد منك في كل صورة عنك.
                         </div>
-                        <div class="policy">
+                        <div class="policy border border-top-0 p-3">
                             ابل ايفون 16 برو‏ (128‎ GB) تيتانيوم أسود , جديد غير مستخدم أصلي بالضمان من السعودية .
 
                             تصميم من التيتانيوم ولا أروع — يتميز iPhone 16 Pro بتصميم كله قوة وخفة مع شاشة ريتنا سوبر XDR
@@ -263,66 +263,86 @@
                             واسعة للغاية 48MP أكثر تطوراً، يمكنك أن تصور بالماكرو روائع فائقة الصغر أو تلتقط مشاهد بانورامية
                             على
                             مد النظر. هل تريد لقطات أوضح من مسافة أبعد؟ المهمة ولا أسهل مع كاميرا تقريب المسافات 5x.
-                            فيديوهات
-                            Pro — انتقل بفيديوهاتك إلى آفاق جديدة كلياً مع كاميرا 48MP Fusion التي تدعم تنسيق 4K Dolby
-                            Vision
-                            بمعدل 120 إطاراً في الثانية وميكروفونات بجودة الاستوديوهات الاحترافية تعزز نقاء التسجيلات. في
-                            جيبك
-                            استوديو احترافي. الأنماط الفوتوغرافية — يمنحك أحدث جيل من الأنماط الفوتوغرافية حرية إبداعية غير
-                            مسبوقة كي تضع المزيد منك في كل صورة عنك.
+                            
                         </div>
-                        <div class="commentsSection">
+                        <div class="border border-top-0 commentsSection">
 
                             <div class="commentSection">
-                                <div class="imgNameComment">
-                                    <div class="image">
+                                <div class="imgNameComment pb-4">
+                                    <div class="d-flex gap-2 image p-4 pb-2">
                                         <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
 
+                                        <div class="align-items-center d-flex justify-content-between nameComment w-100">
+                                            <div class="">
+                                                <div class="name opacity-50">User5414</div>
+                                                <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                                            </div>
+                                            <div class="from opacity-50">2 يوم</div>
+                                        </div>
                                     </div>
-                                    <div class="nameComment">
-                                        <div class="name">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
-                                    </div>
-                                    <div class="replayComment">
-                                        <div class="icon"><img
+                                    <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
+                                        <div class="align-items-center d-flex gap-2 icon"><img
                                                 src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}"
                                                 alt="">رد</div>
-                                        <input type="text" class="recomment">
+                                        <input type="text" class="recomment p-2 border-0 d-none"
+                                            placeholder="اكتب تعليقا">
                                     </div>
-                                    <div class="from">2 يوم</div>
                                 </div>
                             </div>
+
                             <div class="commentSection">
-                                <div class="imgNameComment">
-                                    <div class="image">
+                                <div class="imgNameComment pb-4">
+                                    <div class="d-flex gap-2 image p-4 pb-2">
                                         <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
 
+                                        <div class="align-items-center d-flex justify-content-between nameComment w-100">
+                                            <div class="">
+                                                <div class="name opacity-50">User5414</div>
+                                                <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                                            </div>
+                                            <div class="from opacity-50">2 يوم</div>
+                                        </div>
                                     </div>
-                                    <div class="nameComment">
-                                        <div class="name">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                                    <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
+                                        <div class="align-items-center d-flex gap-2 icon"><img
+                                                src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}"
+                                                alt="">رد</div>
+                                        <input type="text" class="recomment p-2 border-0 d-none"
+                                            placeholder="اكتب تعليقا">
                                     </div>
                                 </div>
-                                <div class="from">2 يوم</div>
                             </div>
+
                             <div class="commentSection">
-                                <div class="imgNameComment">
-                                    <div class="image">
+                                <div class="imgNameComment pb-4">
+                                    <div class="d-flex gap-2 image p-4 pb-2">
                                         <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
 
+                                        <div class="align-items-center d-flex justify-content-between nameComment w-100">
+                                            <div class="">
+                                                <div class="name opacity-50">User5414</div>
+                                                <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                                            </div>
+                                            <div class="from opacity-50">2 يوم</div>
+                                        </div>
                                     </div>
-                                    <div class="nameComment">
-                                        <div class="name">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                                    <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
+                                        <div class="align-items-center d-flex gap-2 icon"><img
+                                                src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}"
+                                                alt="">رد</div>
+                                        <input type="text" class="recomment p-2 border-0 d-none"
+                                            placeholder="اكتب تعليقا">
                                     </div>
                                 </div>
-                                <div class="from">2 يوم</div>
                             </div>
+
 
                         </div>
 
                     </div>
-                </div>
+                </div> --}}
+                <livewire:product-tabs />
+
             </div>
         </div>
     </section>
@@ -346,5 +366,16 @@
                 swiper: swiper,
             },
         });
+        $('.auctionPage .commentSection .icon').each(function(index) {
+            $(this).on('click', () => {
+                if ($('.recomment').eq(index).hasClass('d-none')) {
+                    $('.recomment').eq(index).removeClass('d-none')
+                } else {
+                    $('.recomment').eq(index).addClass('d-none')
+
+                }
+            })
+
+        })
     </script>
 @endpush
