@@ -30,7 +30,7 @@
                             </div>
                         @endif
 
-                        <div class="d-flex justify-content-between align-items-center mb-2">
+                        <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap">
                             <h6 class="mb-0">اسم المزاد</h6>
                             <img src="{{ asset('assets/imgs/image 13.png') }}" alt="الدولة" class="flag-img"
                                 width="36" height="24">
@@ -56,7 +56,7 @@
                                 <p class="mb-2 title-auc mt-4 text-start text-danger">المزاد منتهي</p>
                             @endif
 
-                            <div class="d-align-items-center d-flex justify-content-between">
+                            <div class="d-align-items-center d-flex justify-content-between flex-wrap">
                                 <div class="d-flex align-items-center">
                                     <img src="{{ asset('assets/imgs/681016.jpg') }}" alt="الفائز"
                                         class="rounded-circle me-2 object-fit-cover" width="28" height="28">
@@ -70,8 +70,8 @@
                         @else
                             {{-- لو المزاد لسه شغال --}}
                             <p class="mb-2 title-auc mt-4 text-start">ينتهي خلال :</p>
-                            <div class="d-align-items-center d-flex justify-content-between">
-                                <div class="d-flex justify-content-between text-danger fw-bold">
+                            <div class="d-align-items-center d-flex justify-content-between flex-wrap">
+                                <div class="d-flex justify-content-between text-danger fw-bold flex-wrap">
                                     <span class="count-auc m-2">01 <span class="d-block">يوم</span></span>
                                     <span class="count-auc m-2">01 <span class="d-block">ساعة</span></span>
                                     <span class="count-auc m-2">01 <span class="d-block">دقيقة</span></span>
