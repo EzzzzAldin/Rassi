@@ -1,0 +1,115 @@
+.auctionPage .alertSection {
+    background-color: #f1e6c1;
+    color: black;
+    border-radius: 7px;
+}
+
+.auctionPage .TimerSection {
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+}
+
+.auctionPage .pricing,
+.auctionPage .numAuct,
+.auctionPage .endDate {
+    color: black;
+}
+
+.mySwiper2 .swiper-slide img {
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+.sliderAuctionPage .swiper-slide img {
+    border-radius: 10px;
+}
+
+.sliderAuctionPage .swiper-slide {
+    border-radius: 10px;
+}
+
+.sliderAuctionPage .mySwiper .swiper-slide {
+    border-radius: 10px;
+    height: 100px !important;
+    width: 100px !important;
+}
+
+.auctionPage .lowerCaseForAuction {
+    background-color: #182045;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 7px;
+    color: white;
+}
+
+.auctionPage .shippingInfo {
+    color: black;
+    font-weight: bold;
+    font-size: smaller;
+    border-radius: 7px;
+}
+
+.auctionPage .mineNave {
+    border-radius: 10px 10px 0px 0px;
+    color: black;
+}
+
+.auctionPage .mineNave h4 {
+    opacity: 0.5;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.auctionPage .mineNave h4.active {
+    opacity: 1;
+    transition: 0.5s;
+    position: relative;
+}
+
+.auctionPage .mineNave h4.active::before,
+.auctionPage .mineNave h4::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+.auctionPage .mineNave h4::after {
+    width: 0;
+    transition: all 0.5s;
+    right: 0;
+}
+
+.auctionPage .mineNave h4:hover::after {
+    width: 100%;
+
+}
+
+
+.auctionPage .valSection .dis,
+.auctionPage .valSection .policy,
+.auctionPage .valSection .commentsSection {
+    background-color: #f3f4f6;
+    border-radius: 0px 0px 10px 10px;
+    color: black;
+    font-size: smaller;
+    text-align: justify;
+}
+
+.auctionPage .commentSection .icon {
+    width: 88%;
+}
+
+.auctionPage .commentSection .recomment {
+    width: 88%;
+    border-radius: 10px;
+    height: 30px;
+    outline: none;
+}
+
+.auctionPage .commentSection .icon {
+    cursor: pointer;
+}

@@ -24,7 +24,7 @@
 
 
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    {{-- <link rel="stylesheet" href="{{ asset('assets/css/custome.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/custome.css') }}" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" rel="stylesheet">

@@ -212,23 +212,25 @@
 
 @endsection
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const accordions = document.querySelectorAll('.accordion-collapse');
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordions = document.querySelectorAll('.accordion-collapse');
 
-        accordions.forEach(collapse => {
-            const toggleImg = collapse.closest('.accordion-item')
-                .querySelector('.accordion-button img');
+            accordions.forEach(collapse => {
+                const toggleImg = collapse.closest('.accordion-item')
+                    .querySelector('.accordion-button img');
 
-            if (toggleImg) {
-                collapse.addEventListener('show.bs.collapse', function() {
-                    toggleImg.src = "{{ asset('assets/imgs/Minus.svg') }}";
-                });
+                if (toggleImg) {
+                    collapse.addEventListener('show.bs.collapse', function() {
+                        toggleImg.src = "{{ asset('assets/imgs/Minus.svg') }}";
+                    });
 
-                collapse.addEventListener('hide.bs.collapse', function() {
-                    toggleImg.src = "{{ asset('assets/imgs/Plus.svg') }}";
-                });
-            }
+                    collapse.addEventListener('hide.bs.collapse', function() {
+                        toggleImg.src = "{{ asset('assets/imgs/Plus.svg') }}";
+                    });
+                }
+            });
         });
-    });
-</script>
+    </script>
+@endpush
