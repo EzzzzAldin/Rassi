@@ -1397,4 +1397,90 @@ footer {
     width: 300px;
 }
 
+.list-group-item-forms button {
+    outline: none !important;
+    box-shadow: unset !important;
+    border-color: transparent !important;
+}
+
+.profile-forms .form-login {
+    max-width: 100%;
+}
+
+.profile-forms h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.profile-forms .form-login .btn-gradient {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+    .profile-forms .form-login .btn-gradient {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .profile-info .text-center img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .stars i {
+        font-size: 1rem !important;
+    }
+
+    .rate {
+        font-size: 1.5rem !important;
+    }
+
+    .location span {
+        font-size: 0.8rem !important;
+    }
+
+    .location img {
+        width: 16px !important;
+    }
+
+    .location {
+        margin: 0 !important;
+        height: 60px;
+    }
+
+    .profile-info .btn-submit .btn-gradient {
+        padding: 5px !important;
+        width: 100% !important;
+        font-size: 0.8rem;
+    }
+
+    .auction-card h6 {
+        font-size: 0.8rem;
+    }
+
+    .auction-card img.flag-img {
+        width: 24px;
+        height: 15px;
+    }
+
+    .auction-card .auc-img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .filter-btn {
+        padding: 10px;
+    }
+}
+
 /* End Style Profile (phase 5) Route */

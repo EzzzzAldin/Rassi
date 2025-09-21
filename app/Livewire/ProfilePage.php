@@ -34,8 +34,13 @@ class ProfilePage extends Component
 
     public function openSettingsForm($form)
     {
-        $this->settingsView = $form; // personal / password / payment
+        $this->settingsView = $form;
+
+        if ($form === 'personal') {
+            $this->dispatch('phone-field-ready');
+        }
     }
+
 
     public function backToSettingsMenu()
     {
