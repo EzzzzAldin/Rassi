@@ -63,73 +63,36 @@
 
             @if ($activeTab === 'comments')
                 <div class="border border-top-0 commentsSection">
-                    <div class="commentSection">
-                        <div class="imgNameComment pb-4">
-                            <div class="d-flex gap-2 image p-4 pb-2">
-                                <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
-
-                                <div class="align-items-center d-flex justify-content-between nameComment w-100">
-                                    <div class="">
-                                        <div class="name opacity-50">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
+                    @foreach ($comments as $comment)
+                        <div class="commentSection">
+                            <div class="imgNameComment pb-4">
+                                <div class="d-flex gap-2 image p-4 pb-2">
+                                    <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
+                                    <div class="align-items-center d-flex justify-content-between nameComment w-100">
+                                        <div>
+                                            <div class="name opacity-50">{{ $comment['user'] }}</div>
+                                            <div class="commant">{{ $comment['content'] }}</div>
+                                        </div>
+                                        <div class="from opacity-50">{{ $comment['time'] }}</div>
                                     </div>
-                                    <div class="from opacity-50">2 يوم</div>
                                 </div>
-                            </div>
-                            <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
-                                <div class="align-items-center d-flex gap-2 icon"><img
-                                        src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}" alt="">رد
+                                <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
+                                    <div class="align-items-center d-flex gap-2 icon"
+                                        wire:click="toggleReply({{ $comment['id'] }})" style="cursor: pointer;">
+                                        <img src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}" alt="">
+                                        رد
+                                    </div>
+
+                                    @if (in_array($comment['id'], $openReplies))
+                                        <input type="text" class="recomment p-2 border-0" placeholder="اكتب تعليقا">
+                                    @endif
                                 </div>
-                                <input type="text" class="recomment p-2 border-0 d-none" placeholder="اكتب تعليقا">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="commentSection">
-                        <div class="imgNameComment pb-4">
-                            <div class="d-flex gap-2 image p-4 pb-2">
-                                <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
-
-                                <div class="align-items-center d-flex justify-content-between nameComment w-100">
-                                    <div class="">
-                                        <div class="name opacity-50">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
-                                    </div>
-                                    <div class="from opacity-50">2 يوم</div>
-                                </div>
-                            </div>
-                            <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
-                                <div class="align-items-center d-flex gap-2 icon"><img
-                                        src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}" alt="">رد
-                                </div>
-                                <input type="text" class="recomment p-2 border-0 d-none" placeholder="اكتب تعليقا">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="commentSection">
-                        <div class="imgNameComment pb-4">
-                            <div class="d-flex gap-2 image p-4 pb-2">
-                                <img src="{{ asset('assets/imgs/auctionShow/Ellipse7.png') }}" alt="">
-
-                                <div class="align-items-center d-flex justify-content-between nameComment w-100">
-                                    <div class="">
-                                        <div class="name opacity-50">User5414</div>
-                                        <div class="commant">المحتوي لأي تعليق هناااااا</div>
-                                    </div>
-                                    <div class="from opacity-50">2 يوم</div>
-                                </div>
-                            </div>
-                            <div class="align-items-center d-flex flex-column gap-2 pb-0 pt-0 replayComment">
-                                <div class="align-items-center d-flex gap-2 icon"><img
-                                        src="{{ asset('assets/imgs/auctionShow/Vector(1).png') }}" alt="">رد
-                                </div>
-                                <input type="text" class="recomment p-2 border-0 d-none" placeholder="اكتب تعليقا">
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             @endif
+
         </div>
     </div>
 
