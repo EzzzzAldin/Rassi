@@ -15,7 +15,6 @@
         <div class="swiper auction-slider">
             <div class="swiper-wrapper">
 
-                <!-- الكروت -->
                 @for ($i = 1; $i <= 8; $i++)
                     <div class="swiper-slide">
                         <div class="auction-card p-4 shadow-sm rounded">
@@ -39,8 +38,8 @@
 
 
                             <p class="mb-2 title-auc mt-4">ينتهي خلال :</p>
-                            <div class="d-align-items-center d-flex justify-content-between">
-                                <div class="d-flex justify-content-between text-danger fw-bold">
+                            <div class="d-align-items-center d-flex justify-content-between flex-wrap">
+                                <div class="d-flex justify-content-between text-danger fw-bold flex-wrap">
                                     <span class="count-auc m-2">01 <span class="d-block">يوم</span></span>
                                     <span class="count-auc m-2">01 <span class="d-block">ساعة</span></span>
                                     <span class="count-auc m-2">01 <span class="d-block">دقيقة</span></span>
