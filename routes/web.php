@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\CategoryController;
+use App\Livewire\CreateAuctionWizard;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -15,7 +16,11 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 
 Route::get('/categories/{categoryId}/auctions', [AuctionController::class, 'index'])->name('auctions.index');
 
+Route::get('/auctions/create', CreateAuctionWizard::class)->name('auctions.create');
+
 Route::get('/auctions/{auctionId}', [AuctionController::class, 'show'])->name('auctions.show');
+
+
 
 
 Route::view('dashboard', 'dashboard')

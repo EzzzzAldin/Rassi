@@ -15,7 +15,6 @@
         <div class="swiper auction-slider">
             <div class="swiper-wrapper">
 
-                <!-- الكروت -->
                 @for ($i = 1; $i <= 8; $i++)
                     <div class="swiper-slide">
                         <div class="auction-card p-4 shadow-sm rounded">

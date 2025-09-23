@@ -68,7 +68,6 @@
                                 </div>
                             </div>
                         @else
-                            {{-- لو المزاد لسه شغال --}}
                             <p class="mb-2 title-auc mt-4 text-start">ينتهي خلال :</p>
                             <div class="d-align-items-center d-flex justify-content-between flex-wrap">
                                 <div class="d-flex justify-content-between text-danger fw-bold flex-wrap">

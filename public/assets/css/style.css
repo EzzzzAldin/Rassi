@@ -1484,3 +1484,199 @@ footer {
 }
 
 /* End Style Profile (phase 5) Route */
+
+/* Start Style Upload (phase 6) Route */
+
+.step-bar {
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(199, 155, 7, 0.2);
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    height: 10px;
+}
+
+.step-bar.active {
+    background-color: rgba(199, 155, 7, 1);
+}
+
+.flex-fill h6 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(24, 32, 69, 0.4);
+}
+
+.upload-box {
+    background-color: #f8f9fa;
+    transition: 0.3s;
+    height: 384px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-box:hover {
+    background-color: #eef3f7;
+    border-color: #0d6efd;
+}
+
+.border-dashed {
+    border-style: dashed !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.details-form h5 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.details-form input,
+.details-form select,
+.details-form textarea {
+    padding: 16px;
+    border-radius: 5px;
+    background-color: rgba(24, 32, 69, 0.05);
+    border: none !important;
+    outline: none !important;
+    box-shadow: unset !important;
+    transition: all 0.5s;
+}
+
+.details-form input:focus,
+.details-form textarea:focus {
+    background-color: rgba(24, 32, 69, 0.05) !important;
+}
+
+.details-form .nextStep {
+    padding: 10px 24px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--main-color);
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="datetime-local"]::-webkit-clear-button {
+    display: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#endTimeInput {
+    padding-right: 28px !important;
+}
+
+.details-form .iti--allow-dropdown .iti__flag-container {
+    right: auto !important;
+    left: 0 !important;
+}
+
+.details-form .iti__selected-flag {
+    background-color: transparent !important;
+}
+
+.details-form .iti__country-list {
+    text-align: right !important;
+}
+
+.ticket-alert {
+    background-color: rgba(24, 32, 69, 1);
+    padding: 14px 16px;
+}
+
+.ticket-alert h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* End Style Upload (phase 6) Route */
+
+/* If You User (header Style) */
+.notif-panel {
+    position: absolute;
+    top: 100%;
+    right: -300%;
+    width: 340px;
+    max-width: 90vw;
+    max-height: 400px;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-list {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.notif-list::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .notif-panel {
+        width: 95vw;
+        right: 5px;
+    }
+}
+
+.notif-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    background: transparent;
+}
+
+.send-notif {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.message-content,
+.notif-content {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--main-color);
+    position: relative;
+}
+
+.message-content::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(221, 222, 225, 1);
+    height: 70%;
+    width: 2%;
+    right: -4%;
+    top: 25%;
+    border-radius: 5px;
+}
+
+.time-notif {
+    color: rgba(165, 172, 184, 1);
+    font-size: 0.8rem;
+    font-weight: 400;
+}

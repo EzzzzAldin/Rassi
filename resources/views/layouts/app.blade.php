@@ -30,9 +30,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
 
-
-
-
     @stack('styles')
 </head>
 
@@ -59,10 +56,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
-
-
-
-
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
@@ -158,6 +151,43 @@
             priceSlider.noUiSlider.set([null, this.value]);
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const notifBtn = document.getElementById("notifBtn");
+            const notifPanel = document.getElementById("notifPanel");
+
+            notifBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                notifPanel.classList.toggle("d-none");
+            });
+
+            notifPanel.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+            document.addEventListener("click", () => {
+                notifPanel.classList.add("d-none");
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tabs = document.querySelectorAll("#notifPanel .nav-link");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    tabs.forEach(t => t.classList.remove("active"));
+                    tab.classList.add("active");
+
+                });
+            });
+        });
+    </script>
+
+
 
     @stack('scripts')
 </body>
