@@ -133,13 +133,13 @@
 
                 <!-- Tickets -->
                 <div class="icon-item position-relative">
-                    <span id="ticketsBadge" class="badge-count">3</span>
+                    <span id="ticketsBadge" class="badge-count fw-bold">3</span>
                     {{-- <button id="ticketsBtn" class="btn btn-ghost p-1">
                         <img src="{{ asset('assets/imgs/Ticket.svg') }}" alt="tickets" class="icon-svg" width="32"
                             height="32">
                     </button> --}}
-                    <img src="{{ asset('assets/imgs/Ticket.svg') }}" alt="tickets" class="icon-svg" width="32"
-                        height="32">
+                    <img src="{{ asset('assets/imgs/Ticket.svg') }}" alt="tickets" class="icon-svg ms-2"
+                        width="32" height="32">
                 </div>
 
 
