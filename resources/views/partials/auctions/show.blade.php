@@ -163,7 +163,7 @@
 
                         </div>
                     </div>
-                    <div class="btnAuct">
+                    <div class="btnAuct mt-3 mb-3">
                         <button class="btn btn-gradient p-3 w-100" type="button" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             زايد الان
