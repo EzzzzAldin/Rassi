@@ -100,7 +100,7 @@
                         </div>
                         <div class="txt">مزايدتك تم تجاوزها!</div>
                     </div>
-                    <div class="TimerSection d-flex gap-5 justify-content-center m-4 p-3">
+                    <div class="TimerSection d-flex gap-3 justify-content-center m-4 p-3">
                         <div class="timeAndTitle">
                             <div class="time">00</div>
                             <div class="title">ثانية</div>
