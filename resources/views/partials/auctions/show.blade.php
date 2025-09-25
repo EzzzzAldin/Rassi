@@ -100,7 +100,7 @@
                         </div>
                         <div class="txt">مزايدتك تم تجاوزها!</div>
                     </div>
-                    <div class="TimerSection d-flex gap-5 justify-content-center m-4 p-3">
+                    <div class="TimerSection d-flex gap-4 gap-lg-4 gap-md-2 gap-sm-5 justify-content-center m-4 p-3">
                         <div class="timeAndTitle">
                             <div class="time">00</div>
                             <div class="title">ثانية</div>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                     <div class="btnAuct">
-                        <button class="btn btn-gradient p-3 w-100" type="button" data-bs-toggle="modal"
+                        <button class="btn btn-gradient p-3 w-100 mb-2" type="button" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             زايد الان
                             <img src="{{ asset('assets/imgs/auctionShow/Icon.png') }}" alt="">
