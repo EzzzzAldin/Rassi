@@ -44,14 +44,13 @@
                 </li>
             </ul>
 
-            {{-- <div class="d-flex gap-2">
+            <div class="d-flex gap-2">
                 <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
                 <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
-            </div> --}}
+            </div>
 
             {{-- If Login --}}
-            <div class="header-icons d-flex align-items-center gap-3">
-                <!-- Notifications -->
+            {{-- <div class="header-icons d-flex align-items-center gap-3">
                 <div class="icon-item position-relative">
                     <button id="notifBtn" class="btn btn-ghost p-1">
                         <img src="{{ asset('assets/imgs/Notifications.svg') }}" alt="notifications" class="icon-svg"
@@ -131,26 +130,20 @@
                 </div>
 
 
-                <!-- Tickets -->
                 <div class="icon-item position-relative">
                     <span id="ticketsBadge" class="badge-count fw-bold">3</span>
-                    {{-- <button id="ticketsBtn" class="btn btn-ghost p-1">
-                        <img src="{{ asset('assets/imgs/Ticket.svg') }}" alt="tickets" class="icon-svg" width="32"
-                            height="32">
-                    </button> --}}
                     <img src="{{ asset('assets/imgs/Ticket.svg') }}" alt="tickets" class="icon-svg ms-2"
                         width="32" height="32">
                 </div>
 
 
 
-                <!-- Profile -->
                 <div class="icon-item d-flex align-items-center gap-2">
                     <img src="{{ asset('assets/imgs/681016.jpg') }}" alt="profile"
                         class="icon-svg profile-img rounded-circle object-fit-cover" height="56" width="56">
 
                 </div>
-            </div>
+            </div> --}}
             {{-- End If Login --}}
 
         </div>
