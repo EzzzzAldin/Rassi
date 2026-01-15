@@ -93,4 +93,9 @@ class HomePage extends Page implements HasForms
             ->success()
             ->send();
     }
+
+    public static function getNavigationSort(): ?int
+    {
+        return 1;
+    }
 }
