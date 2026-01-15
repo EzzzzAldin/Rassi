@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutUs;
 use App\Models\HomePage;
+use App\Models\TermsCondition;
 
 class HomeController extends Controller
 {
@@ -19,5 +20,12 @@ class HomeController extends Controller
         $aboutus = AboutUs::first();
 
         return view('pages.aboutus', compact('aboutus'));
+    }
+
+    public function terms()
+    {
+        $terms = TermsCondition::active()->get();
+
+        return view('pages.terms', compact('terms'));
     }
 }

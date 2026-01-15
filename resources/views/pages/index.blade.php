@@ -3,7 +3,7 @@
 @endphp
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', $locale == 'en' ? 'Home' : 'الرئيسية')
 
 @section('content')
     @include('partials.index.main')

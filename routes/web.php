@@ -20,6 +20,7 @@ Route::get('/lang/{locale}', function ($locale) {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [HomeController::class, 'aboutUs'])->name('aboutus');
+Route::get('/terms', [HomeController::class, 'terms'])->name('terms');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
 Route::get('/categories/{categoryId}/auctions', [AuctionController::class, 'index'])->name('auctions.index');
 Route::get('/auctions/create', CreateAuctionWizard::class)->name('auctions.create');
@@ -47,7 +48,7 @@ Route::middleware([])->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/{page?}', function ($page = 'index') {
-    $availablePages = ['index', 'contact-us', 'terms'];
+    $availablePages = ['index', 'contact-us'];
 
     if (! in_array($page, $availablePages)) {
         abort(404);

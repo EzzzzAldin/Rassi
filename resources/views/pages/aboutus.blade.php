@@ -4,7 +4,7 @@
     $locale = app()->getLocale();
 @endphp
 
-@section('title', 'من نحن')
+@section('title', $locale == 'en' ? 'About Us' : 'من نحن')
 
 @section('content')
     <section class="about-us">
