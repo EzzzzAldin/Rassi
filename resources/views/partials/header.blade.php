@@ -1,6 +1,28 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-2">
     <div class="container">
 
+        <div class="global-icon" data-aos="fade-up">
+            @php
+                $currentLocale = $locale ?? app()->getLocale();
+                $toggleLocale = $currentLocale === 'en' ? 'ar' : 'en';
+                $flagClass = $currentLocale === 'ar' ? 'fi fi-eg' : 'fi fi-us';
+                $labelText = strtoupper($toggleLocale);
+            @endphp
+
+            <a href="{{ route('lang.switch', ['locale' => $toggleLocale]) }}"
+                class="d-flex align-items-center gap-2 text-decoration-none"
+                style="padding: 6px 12px; border-radius: 50px; background: rgba(0,0,0,0.3); transition: background 0.3s;">
+                {{-- <i class="fa-solid fa-globe fa-lg text-primary"></i> --}}
+                <span class="{{ $flagClass }}" style="font-size: 1.2rem;"></span>
+                <span class="badge rounded-pill text-white px-3 py-2"
+                    style="font-size: 0.85rem; letter-spacing: 1px;background:linear-gradient(to top, #957507 0%, #ecb90e 100%)">
+                    {{ $labelText }}
+                </span>
+            </a>
+        </div>
 
         <a class="navbar-brand fw-bold" href="{{ url('/') }}">
             <img src="{{ asset('assets\imgs\logo.png') }}" alt="Logo" height="80">
@@ -17,36 +39,42 @@
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}">
-                        الرئيسية
+                        {{ $locale == 'en' ? 'Home' : 'الرئيسية' }}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}"
                         href="{{ route('pages', ['page' => 'aboutus']) }}">
-                        من نحن
+                        {{ $locale == 'en' ? 'About Us' : 'من نحن' }}
                     </a>
                 </li>
                 </li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
-                        href="{{ route('categories') }}">المزادات</a></li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
+                        href="{{ route('categories') }}">
+                        {{ $locale == 'en' ? 'Auctions' : 'المزادات' }}
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
                         href="{{ route('pages', ['page' => 'terms']) }}">
-                        الشروط والأحكام
+                        {{ $locale == 'en' ? 'Terms and Conditions' : 'الشروط والأحكام' }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}"
                         href="{{ route('pages', ['page' => 'contact-us']) }}">
-                        تواصل معنا
+                        {{ $locale == 'en' ? 'Contact Us' : 'تواصل معنا' }}
                     </a>
                 </li>
             </ul>
 
             <div class="d-flex gap-2">
-                <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
-                <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
+                <a href="{{ route('login') }}"
+                    class="btn btn-login btn-gradient">{{ $locale == 'en' ? 'Log in' : 'تسجيل دخول' }}</a>
+                <a href="{{ route('register') }}"
+                    class="btn btn-register">{{ $locale == 'en' ? 'Register' : 'تسجيل حساب' }}</a>
             </div>
 
             {{-- If Login --}}

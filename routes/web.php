@@ -2,27 +2,27 @@
 
 use App\Http\Controllers\AuctionController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Livewire\CreateAuctionWizard;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.index');
-})->name('home');
+Route::get('/lang/{locale}', function ($locale) {
+    abort_unless(in_array($locale, ['ar', 'en']), 404);
 
+    Cookie::queue('locale', $locale, 60 * 24 * 30); // 30 days
+
+    return back();
+})->name('lang.switch');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
-
 Route::get('/categories/{categoryId}/auctions', [AuctionController::class, 'index'])->name('auctions.index');
-
 Route::get('/auctions/create', CreateAuctionWizard::class)->name('auctions.create');
-
 Route::get('/auctions/{auctionId}', [AuctionController::class, 'show'])->name('auctions.show');
-
-
-
-
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -43,8 +43,7 @@ Route::middleware([])->group(function () {
     Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
 });
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
 
 Route::get('/{page?}', function ($page = 'index') {
     $availablePages = ['index', 'aboutus', 'contact-us', 'terms'];
@@ -52,5 +51,6 @@ Route::get('/{page?}', function ($page = 'index') {
     if (! in_array($page, $availablePages)) {
         abort(404);
     }
+
     return view("pages.$page");
 })->name('pages');

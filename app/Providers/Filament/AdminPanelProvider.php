@@ -27,6 +27,10 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->brandLogo(asset('assets/imgs/Untitled-3-01.png'))
+            ->brandLogoHeight('6rem')
+            ->brandName('Rassi Dashboard')
+            ->profile()
             ->login()
             ->colors([
                 'primary' => Color::Amber,

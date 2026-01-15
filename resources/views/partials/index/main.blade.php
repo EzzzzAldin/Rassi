@@ -1,18 +1,23 @@
 <section class="hero-section">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="{{ asset('assets\videos\Big_Buck_Bunny_1080_10s_5MB.mp4') }}" type="video/mp4">
-        متصفحك لا يدعم الفيديو
-    </video>
+    @if ($homepage->video)
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{{ asset('storage/' . $homepage->video) }}" type="video/mp4">
+            {{ $locale == 'ar' ? 'متصفحك لا يدعم الفيديو' : 'Your browser does not support video' }}
+        </video>
+    @else
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{{ asset('assets\videos\Big_Buck_Bunny_1080_10s_5MB.mp4') }}" type="video/mp4">
+            {{ $locale == 'ar' ? 'متصفحك لا يدعم الفيديو' : 'Your browser does not support video' }}
+        </video>
+    @endif
 
     <div class="overlay"></div>
 
-    <div class="hero-content text-end">
-        <h1 class="hero-title m-4">أهلا بك في <span>منصتك الآمنة</span> للمزادات الإلكترونيه</h1>
-        <p class="hero-subtitle m-4">منصتك الأولى للمزادات الإلكترونية، بتجربة آمنة وسهلة شارك في المزادات المباشرة، ادفع
-            تأمين مسترجع بكل شفافية، واستمتع بخيارات دفع متعددة لتضمن عملية مريحة من البداية للنهاية.
-        </p>
+    <div class="hero-content text-end" style="direction: {{ $locale == 'ar' ? 'rtl' : 'ltr' }}">
+        <h1 class="hero-title m-4">{{ $homepage->title ?? '' }}</h1>
+        <p class="hero-subtitle m-4">{!! $homepage->description ?? '' !!}</p>
         <a href="#" class="btn btn-gradient m-4 d-inline-flex align-items-center gap-2">
-            تصفح المزادات
+            {{ $locale == 'ar' ? 'تصفح المزادات' : 'Browse Auctions' }}
             <img src="{{ asset('assets\imgs\arrow-right-up.svg') }}" alt="سهم" width="20" height="20">
         </a>
 

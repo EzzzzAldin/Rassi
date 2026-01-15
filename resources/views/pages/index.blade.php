@@ -1,3 +1,6 @@
+@php
+    $locale = app()->getLocale();
+@endphp
 @extends('layouts.app')
 
 @section('title', 'Home')
