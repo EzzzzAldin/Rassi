@@ -50,27 +50,14 @@
 
             <!-- Livewire form -->
             <form wire:submit.prevent="register">
-                @if ($accountType !== 'company')
-                    <!-- Name -->
-                    <div class="mb-3">
-                        <input type="text" wire:model="name" class="form-control text-start"
-                            placeholder="الاسم الكامل" required>
-                        @error('name')
-                            <span class="text-danger small">{{ $message }}</span>
-                        @enderror
-                    </div>
-                @endif
-
-                @if ($accountType === 'company')
-                    <!-- Company Name -->
-                    <div class="mb-3">
-                        <input type="text" wire:model="company_name" class="form-control text-start"
-                            placeholder="اسم الشركة" required>
-                        @error('company_name')
-                            <span class="text-danger small">{{ $message }}</span>
-                        @enderror
-                    </div>
-                @endif
+                <!-- Name -->
+                <div class="mb-3">
+                    <input type="text" wire:model="name" class="form-control text-start" placeholder="الإسم"
+                        required>
+                    @error('name')
+                        <span class="text-danger small">{{ $message }}</span>
+                    @enderror
+                </div>
 
                 <!-- Email -->
                 <div class="mb-3">
@@ -82,41 +69,24 @@
                 </div>
 
                 <!-- Phone -->
-                <div class="mb-3">
+                <div class="mb-3" wire:ignore>
                     <input id="phone" type="tel" wire:model="phone" class="form-control text-start"
                         placeholder="رقم الهاتف" required>
-                    @error('phone')
+                    <input type="hidden" name="full_phone" id="full_phone" wire:model="full_phone">
+
+                    @error('full_phone')
                         <span class="text-danger small">{{ $message }}</span>
                     @enderror
                 </div>
 
-                @if ($accountType === 'company')
-                    <!-- Commercial Register -->
-                    <div class="mb-3">
-                        <select wire:model="commercial_register" class="form-control text-start" required>
-                            <option value="">اختر الفئة</option>
-                            <option value="مطعم">مطعم</option>
-                            <option value="متجر">متجر</option>
-                            <option value="شركة">شركة</option>
-                            <option value="فندق">فندق</option>
-                            <option value="مستشفى">مستشفى</option>
-                        </select>
-                        @error('commercial_register')
-                            <span class="text-danger small">{{ $message }}</span>
-                        @enderror
-                    </div>
-                @endif
 
-                @if ($accountType !== 'company')
-                    <!-- Name -->
-                    <div class="mb-3">
-                        <input type="text" wire:model="address" class="form-control text-start" placeholder="العنوان"
-                            required>
-                        @error('address')
-                            <span class="text-danger small">{{ $message }}</span>
-                        @enderror
-                    </div>
-                @endif
+                <div class="mb-3">
+                    <input type="text" wire:model="address" class="form-control text-start" placeholder="العنوان"
+                        required>
+                    @error('address')
+                        <span class="text-danger small">{{ $message }}</span>
+                    @enderror
+                </div>
 
                 <!-- Password -->
                 <div class="mb-2 position-relative">
@@ -141,6 +111,46 @@
                     </span>
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label">صورة الملف الشخصي</label>
+
+                    <input type="file" wire:model="image" accept="image/*" class="form-control">
+
+                    {{-- Preview --}}
+                    @if ($image)
+                        <div class="mt-2">
+                            <img src="{{ $image->temporaryUrl() }}" class="img-thumbnail"
+                                style="max-height: 200px; width:auto;">
+                        </div>
+                    @endif
+
+                    @error('image')
+                        <span class="text-danger small">{{ $message }}</span>
+                    @enderror
+                </div>
+
+
+                @if ($accountType === 'company')
+                    <div class="mb-3">
+                        <label class="form-label">صورة السجل التجاري</label>
+
+                        <input type="file" wire:model="commercial_register" accept="image/*" class="form-control"
+                            required>
+
+                        {{-- Preview --}}
+                        @if ($commercial_register)
+                            <div class="mt-2">
+                                <img src="{{ $commercial_register->temporaryUrl() }}" class="img-thumbnail"
+                                    style="max-height: 200px">
+                            </div>
+                        @endif
+
+                        @error('commercial_register')
+                            <span class="text-danger small">{{ $message }}</span>
+                        @enderror
+                    </div>
+                @endif
+
 
                 <!-- Submit button -->
                 <button type="submit" class="btn w-100 btn-gradient">إنشاء الحساب</button>
@@ -148,7 +158,8 @@
 
             <!-- Back button -->
             <div class="text-center mt-3">
-                <a wire:click="$set('step','choose')" style="cursor:pointer;" class="re-account text-decoration-none">
+                <a wire:click="$set('step','choose')" style="cursor:pointer;"
+                    class="re-account text-decoration-none">
                     العودة لاختيار نوع الحساب
                 </a>
             </div>
@@ -178,11 +189,11 @@
         }
     }
 
-
     function initPhoneInput() {
         const input = document.querySelector("#phone");
+        const hiddenInput = document.querySelector("#full_phone");
 
-        if (!input) return;
+        if (!input || !hiddenInput) return;
 
         const oldInstance = window.intlTelInputGlobals.getInstance(input);
         if (oldInstance) {
@@ -196,20 +207,27 @@
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
         });
 
-        input.addEventListener("countrychange", function() {
-            console.log("🌍 Country changed:", iti.getSelectedCountryData());
-        });
+        const syncNumber = () => {
+            hiddenInput.value = iti.getNumber();
+            hiddenInput.dispatchEvent(new Event('input', {
+                bubbles: true
+            }));
+            console.log("📞 Full number with country code:", hiddenInput.value);
+        };
 
-        input.addEventListener("input", function() {
-            console.log("📞 Number changed:", input.value);
-        });
+        input.addEventListener("countrychange", syncNumber);
+        input.addEventListener("input", syncNumber);
+        input.addEventListener("blur", syncNumber);
+
+        syncNumber();
     }
+
+
 
     document.addEventListener('livewire:init', () => {
 
         Livewire.on('phone-field-ready', () => {
             console.log("📱 وصل event: phone-field-ready من Livewire");
-
             setTimeout(() => {
                 initPhoneInput();
             }, 200);

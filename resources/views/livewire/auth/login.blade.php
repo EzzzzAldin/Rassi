@@ -17,12 +17,13 @@
 
             <!-- Phone Input -->
             <div class="mb-3">
-                <input id="phone" type="tel" wire:model="phone" class="form-control text-end"
-                    placeholder="رقم الهاتف" required>
-                @error('phone')
+                <input id="email" type="email" wire:model="email" class="form-control text-start"
+                    placeholder="البريد الإلكتروني" required>
+                @error('email')
                     <span class="text-danger small">{{ $message }}</span>
                 @enderror
             </div>
+
 
 
             <!-- Password Input -->

@@ -45,7 +45,7 @@
              {{ $slot ?? '' }}
 
              <!-- Chat Box -->
-             <div id="chat-box" class="chat-box">
+             {{-- <div id="chat-box" class="chat-box">
                  <!-- Header -->
                  <div class="chat-header">
                      <div class="user-info">
@@ -71,8 +71,7 @@
                              width="24" height="24">
                      </button>
                  </div>
-             </div>
-
+             </div> --}}
              <!-- زرار لفتح الشات (تجريبي) -->
              {{-- <button onclick="openChat()" style="position:fixed; bottom:20px; right:20px;">افتح الشات</button> --}}
 
@@ -80,7 +79,6 @@
          </main>
          @include('partials.footer')
      </div>
-
      @stack('modals')
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -231,6 +229,7 @@
      </script>
 
      @stack('scripts')
+
  </body>
 
  </html>

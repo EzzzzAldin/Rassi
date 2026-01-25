@@ -44,11 +44,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}"
-                        href="{{ route('pages', ['page' => 'aboutus']) }}">
+                    <a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}" href="{{ route('aboutus') }}">
                         {{ $locale == 'en' ? 'About Us' : 'من نحن' }}
                     </a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
@@ -57,24 +55,46 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
-                        href="{{ route('pages', ['page' => 'terms']) }}">
+                    <a class="nav-link {{ request()->is('terms') ? 'active' : '' }}" href="{{ route('terms') }}">
                         {{ $locale == 'en' ? 'Terms and Conditions' : 'الشروط والأحكام' }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}"
-                        href="{{ route('pages', ['page' => 'contact-us']) }}">
+                        href="{{ route('contactus') }}">
                         {{ $locale == 'en' ? 'Contact Us' : 'تواصل معنا' }}
                     </a>
                 </li>
             </ul>
 
             <div class="d-flex gap-2">
-                <a href="{{ route('login') }}"
-                    class="btn btn-login btn-gradient">{{ $locale == 'en' ? 'Log in' : 'تسجيل دخول' }}</a>
-                <a href="{{ route('register') }}"
-                    class="btn btn-register">{{ $locale == 'en' ? 'Register' : 'تسجيل حساب' }}</a>
+                @php
+                    $user = auth()->user();
+                @endphp
+                @if ($user)
+
+                    <a href="{{ route('settings.profile', $user->id) }}"
+                        class="d-flex align-items-center text-decoration-none">
+
+                        <span class="me-2 text-black-50">{{ $user->name }}</span>
+
+                        @if ($user->image)
+                            <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}"
+                                class="rounded-circle me-2" style="width:40px; height:40px; object-fit:cover;">
+                        @else
+                            <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center me-2"
+                                style="width:40px; height:40px; font-weight:bold;">
+                                {{ Str::substr($user->name, 0, 1) }}
+                            </div>
+                        @endif
+
+                    </a>
+                @else
+                    <a href="{{ route('login') }}"
+                        class="btn btn-login btn-gradient">{{ $locale == 'en' ? 'Log in' : 'تسجيل دخول' }}</a>
+                    <a href="{{ route('register') }}"
+                        class="btn btn-register">{{ $locale == 'en' ? 'Register' : 'تسجيل حساب' }}</a>
+                @endif
             </div>
 
             {{-- If Login --}}
@@ -190,18 +210,43 @@
             <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
                     href="{{ url('/') }}">الرئيسية</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}"
-                    href="{{ route('pages', ['page' => 'aboutus']) }}">من نحن</a></li>
+                    href="{{ route('aboutus') }}">من نحن</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('categories') ? 'active' : '' }}"
                     href="{{ route('categories') }}">المزادات</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('terms') ? 'active' : '' }}"
-                    href="{{ route('pages', ['page' => 'terms']) }}">الشروط
+                    href="{{ route('terms') }}">الشروط
                     والأحكام</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}"
-                    href="{{ route('pages', ['page' => 'contact-us']) }}">تواصل معنا</a></li>
+                    href="{{ route('contactus') }}">تواصل معنا</a></li>
         </ul>
         <div class="mt-3 d-flex flex-column gap-2">
-            <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
-            <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
+
+            @php
+                $user = auth()->user();
+            @endphp
+            @if ($user)
+
+                <a href="{{ route('settings.profile', $user->id) }}"
+                    class="d-flex align-items-center text-decoration-none">
+
+                    <span class="me-2 text-black-50">{{ $user->name }}</span>
+
+                    @if ($user->image)
+                        <img src="{{ asset('storage/' . $user->image) }}" alt="{{ $user->name }}"
+                            class="rounded-circle me-2" style="width:40px; height:40px; object-fit:cover;">
+                    @else
+                        <div class="rounded-circle bg-secondary text-white d-flex justify-content-center align-items-center me-2"
+                            style="width:40px; height:40px; font-weight:bold;">
+                            {{ Str::substr($user->name, 0, 1) }}
+                        </div>
+                    @endif
+
+                </a>
+            @else
+                <a href="{{ route('login') }}" class="btn btn-login btn-gradient">تسجيل دخول</a>
+                <a href="{{ route('register') }}" class="btn btn-register">تسجيل حساب</a>
+            @endif
+
         </div>
     </div>
 </div>
